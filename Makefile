@@ -13,6 +13,8 @@ REGISTRY_USER=pin007
 # Name of docker image, by default parent directory of current one
 IMAGE_NAME != pwd | sed -r -e 's/.*[/](docker-)?//g'
 # Image version, generally you want to specify in `.env` file
+# image tag from branch: `git branch --show-current | sed -r -e 's/(master|main)/latest/'`
+# image tag from git tag: `git describe --tags --abbrev=0`
 IMAGE_TAG != git branch --show-current | sed -r -e 's/(master|main)/latest/'
 # Additional arguments for `docker build`, generally you want to specify this in `.env` file
 DOCKER_BUILD_ARGS =
